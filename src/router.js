@@ -11,6 +11,10 @@ export default new VueRouter({
       component: () => import("@/pages/Home"),
     },
     {
+      path: "/markdown-editor",
+      component: () => import("@/pages/MarkdownEditor"),
+    },
+    {
       path: "/settings",
       component: () => import("@/pages/Settings"),
     },

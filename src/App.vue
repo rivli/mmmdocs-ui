@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app dense dark>
+    <v-app-bar app dense>
       <v-container>
         <v-row align="center">
           <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
@@ -25,8 +25,13 @@
             </v-list-item-icon>
             <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
-
-          <v-list-item to="about">
+          <v-list-item to="/markdown-editor">
+            <v-list-item-icon>
+              <v-icon>mdi-pencil</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Markdown Editor</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/about">
             <v-list-item-icon>
               <v-icon>mdi-information</v-icon>
             </v-list-item-icon>
@@ -48,13 +53,17 @@
         <router-view />
       </v-container>
     </v-main>
+    <Snackbar />
   </v-app>
 </template>
 
 <script>
+import Snackbar from "./components/Snackbar";
 export default {
   name: "App",
-
+  components: {
+    Snackbar,
+  },
   data: () => ({
     drawer: false,
   }),
